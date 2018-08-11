@@ -1,0 +1,110 @@
+CL.exe 是控制 Microsoft C 和 C++ 编译器与链接器的 32 位工具。编译器产生通用对象文件格式 (COFF) 
+对象 (.obj) 文件。链接器产生可执行文件 (.exe) 或动态链接库文件 (DLL)。
+
+注意，所有编译器选项都区分大小写。
+---------------------------------------------------------------------------------------------
+用法如下：
+  CL [option...] file... [option | file]... [lib...] [@command-file] [/link link-opt...]
+
+      option      : 一个或多个 CL 选项。请注意，所有选项都应用于所有指定的源文件。选项是由一个
+                    正斜杠 (/) 或一个短划线 (-) 指定的。如果某个选项带有参数，则该选项的说明指
+                    定在选项和参数之间是否允许有空格。选项名（/HELP 选项除外）区分大小写。有关
+                    更多信息，请参见 CL 选项的顺序。
+         /c    : 编译但不链接
+         /Zs   : 检查语法 
+	 /?    : 列出编译器选项 
+         /arch : 使用 SSE 或 SSE2 指令生成代码 
+           /arch:SSE2 
+	 /clr  : 启用 C++ 的托管扩展并产生在公共语言运行库上运行的输出文件  
+         /F    : 设置堆栈大小    |   此选项设置程序堆栈大小（以字节为单位）。
+                如果不使用此选项，堆栈大小默认为 1 MB
+           /F 100
+         /Fe   : 重命名可执行文件
+           /Feexe.exe 
+	 /G7   ：针对 Pentium 4 或 Athlon 优化代码。 
+	 /GA   ：优化 Windows 应用程序的代码 
+	 /GL   ：启用全程序优化 
+	 /Gm   ：启用最小重新生成 
+	 /HELP ：列出编译器选项 
+	 /I    ：在目录中搜索包含文件 | 指定源文件目录 include
+	    /I"e:\VC\include"
+	 /link : 将指定的选项传递给 LINK 
+	 /MD   : 使用 MSVCRT.lib 创建多线程 DLL 
+	 /ML   : 使用 LIBC.lib 创建单线程可执行文件 
+	 /MT   : 使用 LIBCMT.lib 创建多线程可执行文件 
+	 /O1   : 创建小代码 
+	 /O2   : 创建快速代码 
+	 /Os   : 代码大小优先 
+         /W    : 设置警告等级 
+	    /W3
+	------------------------------
+	 /Ot   : 代码速度优先 
+	 /LD   : 创建动态链接库
+	 /Ox   : 使用最大优化
+
+	 /Zs   : 只检查语法
+	------------------------------
+         /TC   : 指定 C 源文件 
+	 /TP   : 指定 C++ 源文件 
+-----------------------------------------------------------------------------------------
+      file        : 一个或多个源文件、.obj 文件或库的名称。CL 编译源文件并将 .obj 文件和库的名
+                    称传递给链接器。有关更多信息，请参见 CL 文件名语法。  
+      lib         : 一个或多个库名。CL 将这些名称传递给链接器。 
+      command-file: 包含多个选项和文件名的文件。有关更多信息，请参见 CL 命令文件。 
+      link-opt    : 一个或多个链接器选项。CL 将这些选项传递给链接器 
+---------------------------------------------------------------------------------------------
+精典用法:
+      cl *.cpp /G7 /MD /Ox /Ot /W3 /c /EHsc /I"G:\Visual C++\VC98\PlatformSDK\Include"
+---------------------------------------------------------------------------------------------
+LINK 是将通用对象文件格式 (COFF) 对象文件和库链接起来以创建 32 位可执行 (.exe) 文件或动态链接
+库 (DLL) 的 32 位工具。
+
+LINK 	用法如下：
+
+  /ALIGN 指定每一节的对齐方式 
+	/ALIGN 选项指定程序线性地址空间中每一节的对齐方式。number 参数以字节为单位，并且必须是2 的幂。默认值是 4K (4096)。如果对齐方式产生
+               无效的图像，则链接器发出警告。除非正
+               在编写诸如设备驱动程序的应用程序，否则应不需要修改对齐方式。
+  /DLL 生成 DLL 
+  /DRIVER 创建 Windows NT 核心模式驱动程序 
+  /EXETYPE 生成虚拟设备驱动程序 
+		/EXETYPE：DYNAMIC  创建动态加载的虚拟设备驱动程序。 
+		/EXETYPE：DEV386   创建静态加载的虚拟设备驱动程序。这是                                    /EXETYPE 的默认值
+  /INCREMENTAL 控制增量链接 
+  /LARGEADDRESSAWARE 通知编译器应用程序支持大于 2 GB 的地址 
+  /LIBPATH 允许用户重写环境库路径 
+		/LIBPATH："e:\VC\LIB" /LIBPATH："e:\DX\LIB"
+  /MACHINE 指定目标平台 
+	`	/MACHINE:{AM33|ARM|EBC|IA64|M32R|MIPS|MIPS16|MIPSFPU|MIPSFPU16|
+               MIPSR41XX|SH3|SH3DSP|SH4|SH5|THUMB|X86|        X64/*8.0版本*/}
+			/MACHINE:X86
+  /NOENTRY 创建纯资源 DLL 
+		创建纯资源 DLL 时要求 /NOENTRY 选项。
+  /OPT 控制 LINK 优化
+		如果生成仅运行于 Windows NT 或 Windows 2000 上的组件，则应使用 /OPT:NOWIN98。
+  /SUBSYSTEM: 指定子系统 
+              {CONSOLE|EFI_APPLICATION|EFI_BOOT_SERVICE_DRIVER|
+              EFI_ROM|EFI_RUNTIME_DRIVER|NATIVE|POSIX|WINDOWS|
+              WINDOWSCE}[,#[.##]]
+  /OUT 指定输出文件名 
+		/OUT:Hello.exe
+
+精典用法:
+link *.obj rc.res /LIBPATH:"G:\Visual C++\lib" /SUBSYSTEM:WINDOWS /MACHINE:X86 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib OpenGL32.Lib
+
+rc 是资源编译
+     /l 列出资源用的区域性 
+	0x804 中国
+	0x409 美国	
+	用法:
+	 rc /l 0x804 file.rc
+ 
+---------------------------------------------------------------------------------------------
+MFC 开发如下：
+  编译源代码:
+	cl *.cpp /Ox /Ot /G7 /D "WIN32" /D "_WINDOWS" /D "_AFXDLL" /EHsc /MD /arch:SSE2 /W3 /c
+  资源编译  :
+	rc /l 0x804 winmfc.rc
+  链接      :
+	link *.obj WinMFC.res /out:WinMFC.exe /OPT:NOWIN98 /SUBSYSTEM:WINDOWS /MACHINE:X86
+

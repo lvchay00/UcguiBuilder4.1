@@ -1,0 +1,19 @@
+
+WM_CreateWindow: No memory to create window
+TEXT_Create failed
+WM_CreateWindow: No memory to create window
+BUTTON_Create failed
+WM_CreateWindow: No memory to create window
+BUTTON_Create failed
+WM_CreateWindow: No memory to create window
+BUTTON_Create failed
+GUI_ARRAY_AddItem failed to alloc buffer
+GUI_ARRAY_AddItem failed to alloc buffer
+GUI_ARRAY_AddItem failed to alloc buffer
+GUI_ARRAY_AddItem failed to alloc buffer
+GUI_ARRAY_AddItem failed to alloc buffer
+GUI_ALLOC_Alloc: Could not allocate %d bytes 00000004
+GUI_ARRAY_AddItem failed to alloc buffer
+GUI_ALLOC_Alloc: Could not allocate %d bytes 00000004
+GUI_ARRAY_AddItem failed to alloc buffer
+GUI_ALLOC_Alloc: Could not allocate %d bytes 00000004

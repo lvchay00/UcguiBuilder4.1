@@ -1,0 +1,51 @@
+<dotnetbarlayout version="6" zorder="3,0,1,2">
+  <docksite size="0" dockingside="Top" originaldocksitesize="0" />
+  <docksite size="78" dockingside="Bottom" originaldocksitesize="0">
+    <dockcontainer orientation="1" w="0" h="0">
+      <barcontainer w="582" h="75">
+        <bar name="OutPutBar" dockline="0" layout="2" dockoffset="0" state="2" dockside="4" fpos="634,390,128,128" visible="true">
+          <items>
+            <item name="dockContainerItem5" origBar="" origPos="-1" pos="0" />
+          </items>
+        </bar>
+      </barcontainer>
+    </dockcontainer>
+  </docksite>
+  <docksite size="183" dockingside="Left" originaldocksitesize="0">
+    <dockcontainer orientation="0" w="0" h="0">
+      <barcontainer w="180" h="525">
+        <bar name="ToolBoxBar" dockline="0" layout="2" dockoffset="0" state="2" dockside="1" visible="true">
+          <items>
+            <item name="dockContainerItem1" origBar="" origPos="-1" pos="0" />
+          </items>
+        </bar>
+      </barcontainer>
+    </dockcontainer>
+  </docksite>
+  <docksite size="243" dockingside="Right" originaldocksitesize="0">
+    <dockcontainer orientation="1" w="0" h="0">
+      <barcontainer w="240" h="75">
+        <bar name="ExplorerBar" dockline="0" layout="2" dockoffset="0" state="2" dockside="2" visible="true">
+          <items>
+            <item name="dockContainerItem4" origBar="" origPos="-1" pos="0" />
+          </items>
+        </bar>
+      </barcontainer>
+      <barcontainer w="240" h="447">
+        <bar name="PropertyBar" dockline="0" layout="2" dockoffset="1" state="2" dockside="2" visible="true">
+          <items>
+            <item name="dockContainerItem2" origBar="" origPos="-1" pos="0" />
+          </items>
+        </bar>
+      </barcontainer>
+    </dockcontainer>
+  </docksite>
+  <bars>
+    <bar name="menuBar" dockline="0" layout="0" dockoffset="0" state="2" dockside="3" visible="true" />
+    <bar name="StandedToolBar" dockline="1" layout="0" dockoffset="0" state="2" dockside="3" visible="true" />
+    <bar name="ToolsToolBar" dockline="1" layout="0" dockoffset="311" state="2" dockside="3" visible="true" />
+    <bar name="EditToolBar" dockline="1" layout="0" dockoffset="345" state="2" dockside="3" visible="false" />
+    <bar name="DesignerToolBar" dockline="1" layout="0" dockoffset="472" state="2" dockside="3" visible="false" />
+    <bar name="StatusBar" dockline="0" layout="0" dockoffset="0" state="2" dockside="4" visible="true" />
+  </bars>
+</dotnetbarlayout>

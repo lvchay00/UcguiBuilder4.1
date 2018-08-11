@@ -1,0 +1,20 @@
+
+±‡“Î
+
+debug
+
+/nologo /G5 /ML /W3 /Gm /GX /ZI /Od /I "Config" /I "GUI\Core" /I "GUI\Widget" /I "GUI\WM" /I "System\Simulation" /I "System\Simulation\Res" /I "GUI\LCDDriver" /D "LCD_USE_WINSIM" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /FR"Output\WIN32_MSVC60\Debug/" /Fo"Output\WIN32_MSVC60\Debug/" /Fd"Output\WIN32_MSVC60\Debug/" /FD /GZ /c 
+
+relase
+
+/nologo /G5 /MT /W3 /GX /O1 /I "Config" /I "GUI\Core" /I "GUI\Widget" /I "GUI\WM" /I "System\Simulation" /I "System\Simulation\Res" /I "GUI\LCDDriver" /D "LCD_USE_WINSIM" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /FR"Output\WIN32_MSVC60\Release/" /Fo"Output\WIN32_MSVC60\Release/" /Fd"Output\WIN32_MSVC60\Release/" /FD /c 
+
+¡¨Ω”
+
+debug
+
+System\Simulation\GUISim.lib winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:yes /pdb:"Output\WIN32_MSVC60\Debug/Simulation.pdb" /debug /machine:I386 /nodefaultlib:"libcmt.lib" /out:"Output\WIN32_MSVC60\Debug/Simulation.exe" /pdbtype:sept 
+
+relase
+
+libcmt.lib System\Simulation\GUISim.lib winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /pdb:none /map:"Output\WIN32_MSVC60\Release/Simulation.map" /machine:I386 /out:"Output\WIN32_MSVC60\Release/Simulation.exe" 
